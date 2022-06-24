@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: C:\Users\INRIA\Kompose\kompose.exe convert -f ../docker-compose.base.yaml -f ../docker-compose.prod.yaml
+    kompose.version: 1.26.1 (a9d05d509)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: nestjs
+  name: nestjs
+spec:
+  ports:
+    - name: "3000"
+      port: 3000
+      targetPort: 3000
+  selector:
+    io.kompose.service: nestjs
+status:
+  loadBalancer: {}
