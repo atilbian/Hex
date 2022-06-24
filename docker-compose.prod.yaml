@@ -12,10 +12,7 @@ services:
 
   nginx:
     container_name: nginx
-    image: nginx
-    build:
-      context: ./.docker/nginx/
-      dockerfile: Dockerfile.nginx
+    image: atilbian/hex-nginx:0.0.1
     ports:
       - 80:80
     depends_on:
