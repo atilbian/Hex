@@ -3,8 +3,6 @@ services:
 
   nestjs:
     container_name: nestjs
-    build:
-      context: ./web-app/
     depends_on:
       - postgres
     environment:

@@ -2,8 +2,7 @@ version: "3"
 services:
 
   nestjs:
-    build:
-      dockerfile: ./Dockerfile.prod
+    image: atilbian/hex:0.0.1
     expose:
       - 3000
 

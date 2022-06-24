@@ -2,6 +2,7 @@ version: "3"
 services:
   nestjs:
     build:
+      context: ./web-app/
       dockerfile: ./Dockerfile.dev
     ports:
       - 3000:3000
