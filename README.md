@@ -5,7 +5,7 @@ Play the game of Hex (or Con-Tac-Tix) ([game presentation](<https://en.wikipedia
 This repo consists of 2 main parts:
 
 - A web application, also hosting the API and a terminal-based version of the game - See the [README](web-app/README.md)
-- A mobile application, client to the API - See the [README](mobile-app/README.md)
+- An admin back-office, using the API
 
 ## Prerequisites
 
