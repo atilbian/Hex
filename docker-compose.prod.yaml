@@ -1,6 +1,5 @@
 version: "3"
 services:
-
   nestjs:
     image: atilbian/hex:0.0.1
     expose:
@@ -18,6 +17,9 @@ services:
     depends_on:
       - nestjs
     restart: always
+    labels:
+      kompose.service.type: nodeport
+      kompose.service.nodeport.port: 32000
 
 volumes:
   db-data-prod:
