@@ -6,14 +6,18 @@ metadata:
     kompose.version: 1.26.1 (a9d05d509)
   creationTimestamp: null
   labels:
+    version: 0.0.1
     io.kompose.service: nestjs
-  name: nestjs
+  name: nestjs-v1
 spec:
-  replicas: 1
+  replicas: 10
   selector:
     matchLabels:
-      io.kompose.service: nestjs
-  strategy: {}
+      version: 0.0.1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
   template:
     metadata:
       annotations:
@@ -21,6 +25,7 @@ spec:
         kompose.version: 1.26.1 (a9d05d509)
       creationTimestamp: null
       labels:
+        version: 0.0.1
         io.kompose.service: nestjs
     spec:
       containers:
@@ -58,7 +63,7 @@ spec:
             - name: WAIT_HOSTS
               value: postgres:5432
           image: atilbian/hex:0.0.1
-          name: nestjs
+          name: nestjs-v1
           ports:
             - containerPort: 3000
           resources: {}
